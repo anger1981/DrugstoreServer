@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ServerOfSystem</RootNamespace>
     <AssemblyName>Server</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
     <FileUpgradeFlags>
@@ -32,6 +32,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,6 +43,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -51,18 +53,66 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0-beta1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbsentProduct.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Announcement.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="District.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryOfChangesOfPrice.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryOfReception.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryOfSearchRequest.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IDsOfExistingProduct.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InformationOfSetting.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfSetting.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LogsOfDrugstore.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModificationsOfPrice.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Operator.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
     <Compile Include="PharmaceuticalInformation\Drugstore\ConvertingOfPriceList.cs" />
     <Compile Include="PharmaceuticalInformation\Server\ExchangeBetweenSystemAndQueues.cs" />
     <Compile Include="PharmaceuticalInformation\Server\ExportingOfData.cs" />
@@ -75,6 +125,36 @@
     <Compile Include="PharmaceuticalInformation\Updating\UpdatingOfDataOfInformation.cs" />
     <Compile Include="PharmaceuticalInformation\Updating\UpdatingOfDataOfInformationForMsSQL.cs" />
     <Compile Include="PharmaceuticalInformation\BaseTypes\BaseType.cs" />
+    <Compile Include="Pharmacy.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PharmInfo.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmInfo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PharmInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PharmInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmInfo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="price_list.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateImporting.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product_group.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
     <Compile Include="ProjectInstaller.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -86,6 +166,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RecodingIDsOfDrugstoresOfImporting.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationOfDrugstore.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsOfImportingOfPriceList.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Server.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -94,8 +183,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Terminal.cs">
+      <DependentUpon>PharmInfo.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="PharmInfo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PharmInfo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PharmInfo.edmx.diagram">
+      <DependentUpon>PharmInfo.edmx</DependentUpon>
+    </None>
     <None Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +225,21 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PharmInfo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PharmInfo.edmx</DependentUpon>
+      <LastGenOutput>PharmInfo.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PharmInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PharmInfo.edmx</DependentUpon>
+      <LastGenOutput>PharmInfo.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

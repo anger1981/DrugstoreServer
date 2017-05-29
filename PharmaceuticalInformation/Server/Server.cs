@@ -16,7 +16,7 @@ namespace PharmaceuticalInformation.Server
         // Transfer
         //
         private PharmaceuticalInformation.Server.ExchangeBetweenSystemAndQueues ExchangeFTPAndDataBase;
-        private PharmaceuticalInformation.Server.SynchronizationOfDataOfDataBases SynchronizationOfData;
+        //private PharmaceuticalInformation.Server.SynchronizationOfDataOfDataBases SynchronizationOfData;
         //
         private string StringOfConnection;
         private string StringOfConnection02;
